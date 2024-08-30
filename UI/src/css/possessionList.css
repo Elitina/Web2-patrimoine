@@ -1,0 +1,16 @@
+.create-possession-btn {
+    background-color: #e3d268; 
+    border-color: #e3d268;
+    color: #333;
+    font-size: 18px; 
+    padding: 10px 20px; 
+    margin-bottom: 20px; 
+    display: block; 
+    width: fit-content; 
+  }
+  
+  .create-possession-btn:hover {
+    background-color: #d1c158; 
+    border-color: #d1c158;
+  }
+  

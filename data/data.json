@@ -1,0 +1,54 @@
+{
+  "possessions": [
+    {
+      "libelle": "Iphone",
+      "valeur": "340",
+      "dateDebut": "2024-08-09",
+      "taux": "10",
+      "dateFin": "2024-08-30",
+      "possesseur": "Paul",
+      "status": "clôturé",
+      "valeurActuelle": 452.54000000000013
+    },
+    {
+      "libelle": "Iphone",
+      "valeur": 12000,
+      "dateDebut": "2024-08-01",
+      "taux": 3,
+      "dateFin": "2024-08-29",
+      "possesseur": "Paul",
+      "status": "non clôturé",
+      "valeurActuelle": 12000
+    },
+    {
+      "libelle": "Pc ",
+      "valeur": 450000,
+      "dateDebut": "2024-08-01",
+      "taux": 10,
+      "dateFin": "2024-12-10",
+      "possesseur": "Paul",
+      "status": "clôturé",
+      "valeurActuelle": 658845.0000000002
+    },
+    {
+      "libelle": "Cartable",
+      "valeur": 4000,
+      "dateDebut": "2024-04-11",
+      "taux": 5,
+      "dateFin": "2024-08-30",
+      "possesseur": "Paul",
+      "status": "clôturé",
+      "valeurActuelle": 6205.312863914065
+    },
+    {
+      "libelle": "Montre",
+      "valeur": 10000,
+      "dateDebut": "2024-08-02",
+      "taux": 10,
+      "dateFin": "2024-08-30",
+      "possesseur": "Paul",
+      "status": "clôturé",
+      "valeurActuelle": 10000
+    }
+  ]
+}

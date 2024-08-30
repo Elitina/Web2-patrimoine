@@ -1,0 +1,20 @@
+.custom-navbar {
+    background-color: #2b628f !important;
+    padding-left: 20px; 
+  }
+  
+  .custom-navbar .navbar-brand, 
+  .custom-navbar .nav-link {
+    color: #fff !important; 
+    font-size: 18px;
+  }
+  
+  .custom-navbar .navbar-nav {
+    width: 100%; 
+    justify-content: space-around; 
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #e3d268 !important;
+  }
+  
