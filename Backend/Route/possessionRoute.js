@@ -3,7 +3,6 @@ import {
   getPossessions,
   addPossession,
   updatePossession,
-  deletePossession,
   closePossession,
   getPossessionByLibelle
 } from './../Controller/possessionController.js';
