@@ -29,11 +29,9 @@ function Patrimoine() {
     }
   };
   
-  
-
   return (
     <Container>
-      <h1 className="my-4">Patrimoine</h1>
+      <h1 className="my-4">Patrimony</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       <Form onSubmit={handleValueAtDateSubmit}>
         <Form.Group controlId="date">
@@ -45,13 +43,13 @@ function Patrimoine() {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit" className="mt-3">Valider</Button>
+        <Button variant="primary" type="submit" className="mt-3">Validate</Button>
       </Form>
       {donnees && (
         <>
           <Row className="mt-4">
             <Col>
-              <h4>Somme des Valeurs Actuelles: {totalValue.toFixed(2)} Ar</h4>
+              <h4>Your total assets amount to:  {totalValue.toFixed(2)} Ariary</h4>
             </Col>
           </Row>
           <div className="mt-4">

@@ -13,7 +13,6 @@ const router = express.Router();
 router.get('/', getPossessions);
 router.post('/', addPossession);
 router.put('/:libelle', updatePossession);
-router.delete('/:libelle', deletePossession);
 router.patch('/:libelle/close', closePossession);
 router.get('/:libelle', getPossessionByLibelle);
 

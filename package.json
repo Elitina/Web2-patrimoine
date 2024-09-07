@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^5.1.1",
-    "mocha": "^10.7.0"
+    "mocha": "^10.7.0",
+    "url-polyfill": "^1.1.12"
   }
 }

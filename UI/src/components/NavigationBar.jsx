@@ -10,8 +10,8 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav">
-          <Nav.Link as={Link} to="/patrimoine">Somme des Possessions</Nav.Link>
-          <Nav.Link as={Link} to="/possession">Liste des Possessions</Nav.Link>
+          <Nav.Link as={Link} to="/patrimoine">Sum of Possessions</Nav.Link>
+          <Nav.Link as={Link} to="/possession">Possessions list</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

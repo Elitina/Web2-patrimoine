@@ -3,17 +3,17 @@ import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './../css/table.css'
 
-function Tableau({ possessions, surCloturer, surSupprimer }) {
+function Tableau({ possessions, surCloturer }) {
   return (
     <Table striped bordered hover className="custom-table">
       <thead>
         <tr>
           <th>Libelle</th>
-          <th>Valeur</th>
-          <th>Date Début</th>
-          <th>Date Fin</th>
-          <th>Taux</th>
-          <th>Valeur Actuelle</th>
+          <th>Value</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Depreciation rate</th>
+          <th>Current Value</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -23,8 +23,8 @@ function Tableau({ possessions, surCloturer, surSupprimer }) {
             <td>{possession.libelle}</td>
             <td>{possession.valeur}</td>
             <td>{possession.dateDebut}</td>
-            <td>{possession.dateFin || 'Non clôturée'}</td>
-            <td>{possession.taux}</td>
+            <td>{possession.dateFin || 'Not closed'}</td>
+            <td>{possession.tauxAmortissement}</td>
             <td>{possession.valeurActuelle}</td>
             <td>
               <Link to={`/possession/${possession.libelle}/update`}>
@@ -36,13 +36,6 @@ function Tableau({ possessions, surCloturer, surSupprimer }) {
                 onClick={() => surCloturer(possession.libelle)}
               >
                 Close
-              </Button>
-              <Button
-                variant="danger"
-                className="custom-button"
-                onClick={() => surSupprimer(possession.libelle)}
-              >
-                Delete
               </Button>
             </td>
           </tr>

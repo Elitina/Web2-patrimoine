@@ -4,13 +4,12 @@ import { Button, Container, Form, Alert, Spinner } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function ModifierPossession() {
-  const { libelle } = useParams();
-  const [possession, setPossession] = useState({});
+  const { libelle: initialLibelle } = useParams();
+  const [libelle, setLibelle] = useState(initialLibelle);
   const [valeur, setValeur] = useState('');
   const [dateDebut, setDateDebut] = useState('');
   const [dateFin, setDateFin] = useState('');
-  const [taux, setTaux] = useState('');
-  const [valeurActuelle, setValeurActuelle] = useState('');
+  const [tauxAmortissement, setTauxAmortissement] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -18,14 +17,13 @@ function ModifierPossession() {
   useEffect(() => {
     const fetchPossession = async () => {
       try {
-        const response = await axios.get(`/api/possession/${libelle}`);
-        const { valeur, dateDebut, dateFin, taux, valeurActuelle } = response.data;
-        setPossession(response.data);
+        const response = await axios.get(`/api/possession/${initialLibelle}`);
+        const { valeur, dateDebut, dateFin, tauxAmortissement } = response.data;
+        setLibelle(response.data.libelle || '');
         setValeur(valeur || '');
         setDateDebut(dateDebut || '');
         setDateFin(dateFin || '');
-        setTaux(taux || '');
-        setValeurActuelle(valeurActuelle || '');
+        setTauxAmortissement(tauxAmortissement || '');
       } catch (error) {
         console.error('Erreur lors de la récupération de la possession:', error);
         setError('Erreur lors de la récupération de la possession');
@@ -35,17 +33,17 @@ function ModifierPossession() {
     };
 
     fetchPossession();
-  }, [libelle]);
+  }, [initialLibelle]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/api/possession/${libelle}`, {
+      await axios.put(`/api/possession/${initialLibelle}`, {
         libelle,
         valeur,
         dateDebut,
         dateFin,
-        taux
+        tauxAmortissement
       });
       navigate('/possession');
     } catch (error) {
@@ -73,8 +71,8 @@ function ModifierPossession() {
           <Form.Label>Libelle</Form.Label>
           <Form.Control
             type="text"
-            value={possession.libelle || ''}
-            readOnly
+            value={libelle}
+            onChange={(e) => setLibelle(e.target.value)}
           />
         </Form.Group>
         <Form.Group controlId="valeur" className="mt-3">
@@ -86,7 +84,7 @@ function ModifierPossession() {
           />
         </Form.Group>
         <Form.Group controlId="dateDebut" className="mt-3">
-          <Form.Label>Date de Début</Form.Label>
+          <Form.Label>Date de début</Form.Label>
           <Form.Control
             type="date"
             value={dateDebut}
@@ -94,31 +92,23 @@ function ModifierPossession() {
           />
         </Form.Group>
         <Form.Group controlId="dateFin" className="mt-3">
-          <Form.Label>Date de Fin</Form.Label>
+          <Form.Label>Date de fin</Form.Label>
           <Form.Control
             type="date"
             value={dateFin}
             onChange={(e) => setDateFin(e.target.value)}
           />
         </Form.Group>
-        <Form.Group controlId="taux" className="mt-3">
-          <Form.Label>Taux</Form.Label>
+        <Form.Group controlId="tauxAmortissement" className="mt-3">
+          <Form.Label>Taux d'amortissement</Form.Label>
           <Form.Control
             type="number"
             step="0.01"
-            value={taux}
-            onChange={(e) => setTaux(e.target.value)}
+            value={tauxAmortissement}
+            onChange={(e) => setTauxAmortissement(e.target.value)}
           />
         </Form.Group>
-        <Form.Group controlId="valeurActuelle" className="mt-3">
-          <Form.Label>Valeur Actuelle</Form.Label>
-          <Form.Control
-            type="text"
-            value={valeurActuelle}
-            readOnly
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit" className="mt-3">Mettre à Jour</Button>
+        <Button variant="primary" type="submit" className="mt-3">Mettre à jour</Button>
       </Form>
     </Container>
   );

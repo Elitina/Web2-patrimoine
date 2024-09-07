@@ -1,54 +1,97 @@
-{
-  "possessions": [
-    {
-      "libelle": "Iphone",
-      "valeur": "340",
-      "dateDebut": "2024-08-09",
-      "taux": "10",
-      "dateFin": "2024-08-30",
-      "possesseur": "Paul",
-      "status": "clôturé",
-      "valeurActuelle": 452.54000000000013
-    },
-    {
-      "libelle": "Iphone",
-      "valeur": 12000,
-      "dateDebut": "2024-08-01",
-      "taux": 3,
-      "dateFin": "2024-08-29",
-      "possesseur": "Paul",
-      "status": "non clôturé",
-      "valeurActuelle": 12000
-    },
-    {
-      "libelle": "Pc ",
-      "valeur": 450000,
-      "dateDebut": "2024-08-01",
-      "taux": 10,
-      "dateFin": "2024-12-10",
-      "possesseur": "Paul",
-      "status": "clôturé",
-      "valeurActuelle": 658845.0000000002
-    },
-    {
-      "libelle": "Cartable",
-      "valeur": 4000,
-      "dateDebut": "2024-04-11",
-      "taux": 5,
-      "dateFin": "2024-08-30",
-      "possesseur": "Paul",
-      "status": "clôturé",
-      "valeurActuelle": 6205.312863914065
-    },
-    {
-      "libelle": "Montre",
-      "valeur": 10000,
-      "dateDebut": "2024-08-02",
-      "taux": 10,
-      "dateFin": "2024-08-30",
-      "possesseur": "Paul",
-      "status": "clôturé",
-      "valeurActuelle": 10000
+[
+  {
+    "model": "Personne",
+    "data": {
+      "nom": "John Doe"
     }
-  ]
-}
+  },
+  {
+    "model": "Patrimoine",
+    "data": {
+      "possesseur": {
+        "nom": "John Doe"
+      },
+      "possessions": [
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "MacBook Pro",
+          "valeur": 4300000,
+          "dateDebut": "2023-12-25T00:00:00.000Z",
+          "dateFin": null,
+          "tauxAmortissement": 5
+        },
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "Compte épargne",
+          "valeur": 500000,
+          "dateDebut": "2019-01-06T00:00:00.000Z",
+          "dateFin": null,
+          "tauxAmortissement": -5
+        },
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "Clothes",
+          "valeur": 2000000,
+          "dateDebut": "2020-01-01T00:00:00.000Z",
+          "dateFin": null,
+          "tauxAmortissement": 10
+        },
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "Alternance",
+          "valeur": 600000,
+          "dateDebut": "2023-02-13T00:00:00.000Z",
+          "dateFin": null,
+          "tauxAmortissement": 0,
+          "jour": 1,
+          "valeurConstante": 600000
+        },
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "Survie",
+          "valeur": 300000,
+          "dateDebut": "2023-02-13T00:00:00.000Z",
+          "dateFin": null,
+          "tauxAmortissement": 0,
+          "jour": 2,
+          "valeurConstante": -300000
+        },
+        {
+          "possesseur": {
+            "nom": "John Doe"
+          },
+          "libelle": "Redmi Note 9 (Lost)",
+          "valeur": 800000,
+          "dateDebut": "2022-12-29T00:00:00.000Z",
+          "dateFin": "2024-09-06",
+          "tauxAmortissement": 15,
+          "valeurActuelle": 26356.48,
+          "status": "clôturé"
+        },
+        {
+          "possesseur": {
+            "nom": {
+              "possesseur": "John Doe"
+            }
+          },
+          "libelle": "Samsung Galaxy S23",
+          "valeur": 1600000,
+          "dateDebut": "2024-09-06",
+          "dateFin": null,
+          "tauxAmortissement": 10,
+          "valeurActuelle": 1600000
+        }
+      ]
+    }
+  }
+]
