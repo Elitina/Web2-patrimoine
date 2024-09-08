@@ -20,7 +20,9 @@ app.use((req, res, next) => {
   res.status(404).send('Route non trouvée');
 });
 
-app.listen(port, () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${port}`);
 });
 
