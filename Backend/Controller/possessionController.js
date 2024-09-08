@@ -152,12 +152,15 @@ export async function getPossessionByLibelle(req, res) {
   try {
     const { libelle } = req.params;
     const { status: readStatus, data } = await readFile();
+    console.log('Data:', data);  // Ajoutez ceci
 
     if (readStatus === 'OK') {
       const patrimoineData = data.find(item => item.model === 'Patrimoine');
+      console.log('Patrimoine Data:', patrimoineData);  // Ajoutez ceci
 
       if (patrimoineData && patrimoineData.data && patrimoineData.data.possessions) {
         const possession = patrimoineData.data.possessions.find(p => p.libelle === libelle);
+        console.log('Possession:', possession);  // Ajoutez ceci
         if (possession) {
           const valeurActuelle = calculateCurrentValue(
             possession.valeur,
@@ -176,7 +179,7 @@ export async function getPossessionByLibelle(req, res) {
       res.status(500).json({ error: 'Erreur lors de la récupération des données' });
     }
   } catch (error) {
+    console.error('Erreur lors de la récupération de la possession:', error);  // Ajoutez ceci
     res.status(500).json({ error: 'Erreur lors de la récupération de la possession' });
   }
 }
-
