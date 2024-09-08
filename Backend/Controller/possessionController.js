@@ -1,18 +1,15 @@
 import { readFile, writeFile } from '../../data/index.js';
 
-
 export function calculateCurrentValue(valeur, tauxAmortissement, dateDebut, dateFin) {
   const now = new Date();
   const startDate = new Date(dateDebut);
   const endDate = dateFin ? new Date(dateFin) : now;
-  const monthsPassed =
-    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    endDate.getMonth() -
-    startDate.getMonth();
+
+  const yearsPassed = (endDate - startDate) / (1000 * 60 * 60 * 24 * 365.25);
 
   const valeurActuelle = tauxAmortissement >= 0
-    ? valeur * Math.pow(1 - tauxAmortissement / 100, monthsPassed)
-    : valeur * Math.pow(1 + Math.abs(tauxAmortissement) / 100, monthsPassed);
+    ? valeur * Math.pow(1 - tauxAmortissement / 100, yearsPassed)
+    : valeur * Math.pow(1 + Math.abs(tauxAmortissement) / 100, yearsPassed);
 
   return Math.round(valeurActuelle * 100) / 100;
 }
@@ -58,7 +55,7 @@ export async function addPossession(req, res) {
 
       if (patrimoineData && patrimoineData.data && patrimoineData.data.possessions) {
         const nouvellePossession = {
-          possesseur: { possesseur },
+          possesseur,
           libelle,
           valeur,
           dateDebut,
@@ -182,3 +179,4 @@ export async function getPossessionByLibelle(req, res) {
     res.status(500).json({ error: 'Erreur lors de la récupération de la possession' });
   }
 }
+

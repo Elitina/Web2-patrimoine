@@ -1,8 +1,14 @@
 import express from 'express';
-import getTotalValueAtDate from './../Controller/patrimoineController.js';
+import {getTotalValueAtDate, getValuesByDateRange } from './../Controller/patrimoineController.js';
+
 
 const router = express.Router();
 
-router.get('/totalValueAtDate', getTotalValueAtDate);
+
+router.get('/date', getTotalValueAtDate);
+router.get('/range', getValuesByDateRange);
+
+
+
 
 export default router;

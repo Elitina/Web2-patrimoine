@@ -4,7 +4,7 @@ import {
   addPossession,
   updatePossession,
   closePossession,
-  getPossessionByLibelle
+  getPossessionByLibelle,
 } from './../Controller/possessionController.js';
 
 const router = express.Router();
