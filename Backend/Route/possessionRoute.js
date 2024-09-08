@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', getPossessions);
 router.post('/', addPossession);
 router.put('/:libelle', updatePossession);
-router.patch('/:libelle/close', closePossession);
+router.patch('/:libelle', closePossession);
 router.get('/:libelle', getPossessionByLibelle);
 
 export default router;
