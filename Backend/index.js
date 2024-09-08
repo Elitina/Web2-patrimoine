@@ -5,7 +5,7 @@ import patrimoineRoute from './Route/patrimoineRoute.js'
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://192.168.88.242:3000', 'https://backend-62yk.onrender.com'],
+  origin: ['http://localhost:3000', 'http://192.168.88.242:3000', 'https://front-1xkb.onrender.com'],
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type',
 };
